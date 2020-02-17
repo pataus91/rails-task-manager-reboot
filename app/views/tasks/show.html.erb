@@ -1,0 +1,17 @@
+<%= link_to edit_task_path(@task.id), class: 'pull-right btn btn-default' do %>
+  <i class="fa fa-pencil"></i> Edit this task
+<% end %>
+
+<h1><%= @task.title %></h1>
+
+<p class="well"><%= @task.details %></p>
+<p>
+  <% if @task.completed %>
+    <%= check_box("tag", tag.completed, {checked: true}) %>
+    This task is completed
+  <% else %>
+    <%= check_box("tag", tag.completed, {checked: false}) %>
+    This task is not completed yet
+  <% end %>
+</p>
+<%= link_to 'Back to list', tasks_path %>
